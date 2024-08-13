@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Welcome to P-Ticket</title>
+    <!-- website icon -->
+    <link rel="shortcut icon" href="images/bus-logo.png" type="image/x-icon">
     <!-- css connection -->
      <link rel="stylesheet" href="styles/styles.css">
     <!-- daisy UI connection -->
@@ -65,17 +67,93 @@
                 <li><a>Search</a></li>
               </ul>
             </div>
+            <!-- modal button -->
             <div class="navbar-end">
-                <button class="btn btn-outline btn-success bg-green-100 px-4">Bus <img src="images/bus-icon.png" alt=""></button>
-            </div>
+              <input
+                type="checkbox"
+                value="synthwave"
+                class="toggle theme-controller col-span-2 col-start-1 row-start-1 border-sky-400 bg-amber-300 [--tglbg:theme(colors.sky.500)] checked:border-blue-800 checked:bg-blue-300 checked:[--tglbg:theme(colors.blue.900)] mr-4" />
+              <a href="#" role="button" class="btn btn-outline btn-success bg-green-100 px-4">Bus <img src="images/bus-icon.png" alt=""></a>
           </div>
     </header>
 
 
-    <main class="lg:px-12"></main>
+    <main class="lg:px-12 mt-6">
+
+      <!-- banner section -->
+      <section class="bg-[url('/images/banner.png')] bg-center bg-no-repeat bg-cover rounded-l-3xl rounded-r-3xl min-h-full p-6 md:p-24 lg:p-32 lg:px-96">
+
+        <!-- texts -->
+        <div class="grid justify-center text-center">
+          <h1 class="text-white font-extrabold text-4xl md:text-6xl">End-to-End Travel with <span class="text-[#1DD100]">P Paribahan</span></h1>
+        <!-- details -->
+        <p class="text-white mt-6">Yes, you can book tickets and track your bookings directly within the app. The integrated features offer a seamless experience for managing your travel plans.</p>
+        <!-- button -->
+         <div class="flex justify-center mt-6">
+          <a href="#" role="button" class="btn btn-success bg-[#1DD100] border-0 font-bold">Buy Tickets</a>
+         </div>
+        </div>
+
+        <!-- floating button info -->
+        <div class="flex">
+          <div class="relative">
+            <div class="bg-white border-0 shadow-md shadow-green-600 absolute -bottom-44 left-0 p-8 pr-28 rounded-2xl flex items-center gap-6">
+              <img src="images/people.png" alt=""> 
+              <div>
+              <p class="font-bold text-4xl">500K+</p>
+              <p class="text-[#03071299]">Registered Users</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="bg-white border-0 shadow-md shadow-green-600 absolute -bottom-44 left-[24rem] p-8 pr-28 rounded-2xl flex items-center gap-6">
+              <img src="images/people.png" alt=""> 
+              <div>
+              <p class="font-bold text-4xl">500K+</p>
+              <p class="text-[#03071299]">Registered Users</p>
+              </div>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="bg-white border-0 shadow-md shadow-green-600 absolute -bottom-44 left-[48rem] p-8 pr-28 rounded-2xl flex items-center gap-6">
+              <img src="images/people.png" alt=""> 
+              <div>
+              <p class="font-bold text-4xl">500K+</p>
+              <p class="text-[#03071299]">Registered Users</p>
+              </div>
+            </div>
+          </div>
+          <div></div>
+          <div></div>
+        </div>
+        
+      </section>
+
+      <!-- coupon section -->
+      <section class="mt-32">
+        <div
+  class="hero min-h-screen"
+  style="background-image: url(images/banner.png);">
+  <div class="hero-overlay bg-opacity-60"></div>
+  <div class="hero-content text-neutral-content text-center">
+    <div class="max-w-md">
+      <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
+      <p class="mb-5">
+        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+        quasi. In deleniti eaque aut repudiandae et a id nisi.
+      </p>
+      <button class="btn btn-primary">Get Started</button>
+    </div>
+  </div>
+</div>
+      </section>
+
+      <!-- ticket info and booking section -->
+      <section></section>
+    </main>
 
 
-    <footer class="bg-black p-24">
+    <footer class="bg-black p-24 mt-32">
 
       <!-- website details -->
         <div class="text-white grid md:grid-cols-2 lg:grid-cols-2 gap-4">
