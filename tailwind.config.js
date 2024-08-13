@@ -1,8 +1,17 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
-    content: ["./src/**/*.{html,js}"],
-    theme: {
-      extend: {},
+  theme: {
+    extend: {
+      fontFamily: {
+        raleway: ['Raleway', 'sans-serif'],
+      },
+      fontWeight: {
+        regular: 400,
+        semibold: 600,
+        bold: 700,
+        extrabold: 800,
+      },
     },
-    plugins: [],
-  }
+  },
+  plugins: [],
+}

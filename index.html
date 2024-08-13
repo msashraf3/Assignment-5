@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- css connection -->
+     <link rel="stylesheet" href="styles/styles.css">
     <!-- daisy UI connection -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
-<body class="lg:px-12">
-    <header>
+<body>
+    <header class="lg:px-12">
         <!-- navbar -->
         <div class="navbar bg-base-100">
             <div class="navbar-start">
@@ -43,7 +47,7 @@
                   <li><a>Search</a></li>
                 </ul>
               </div>
-              <a class="btn btn-ghost text-2xl font-extrabold">P-Ticket</a>
+              <a class="btn btn-ghost text-3xl font-extrabold">P-Ticket</a>
             </div>
             <div class="navbar-center hidden lg:flex">
               <ul class="menu menu-horizontal px-1">
@@ -68,9 +72,43 @@
     </header>
 
 
-    <main></main>
+    <main class="lg:px-12"></main>
 
 
-    <footer></footer>
+    <footer class="bg-black p-24">
+
+      <!-- website details -->
+        <div class="text-white grid md:grid-cols-2 lg:grid-cols-2 gap-4">
+          <div>
+            <p class="text-3xl font-extrabold">P-Ticket</p>
+            <p class="mt-4 text-[#FFFFFFCC]">P-Ticket is a digital platform to make your daily commuting better.</p>
+          </div>
+          <div class="grid md:justify-end">
+            <p class="font-semibold md:text-right">Download our app</p>
+            <button class="btn btn-outline text-white mt-4"><img src="images/playstore.png" alt="">
+              <div><p class="text-start text-xs text-[#FFFFFFCC]">GET IT ON</p>
+              <p class="font-extrabold text-lg">Google Play</p></button>
+          </div>
+        </div>
+
+        <!-- dotted line -->
+        <div class="border-t border-dashed border-[#FFFFFF4D] my-10"></div>
+
+
+        <!-- terms and conditions -->
+        <div class="text-white grid md:grid-cols-2 lg:grid-cols-2 gap-4">
+          <div class="text-[#FFFFFFB3]">@all rights reserved, P-Ticket services limited.2024</div>
+          <div>
+            <div class="flex md:flex-col-2 lg:flex-col-2 gap-6 justify-end">
+              <a href="">Terms & condition</a>
+              <a href="">Return & refund policy</a>
+              <a href="">Privacy policy</a>
+            </div>
+          </div>
+        </div>
+    </footer>
+
+<!-- js connection -->
+ <script src="js/index.js"></script>
 </body>
 </html>
