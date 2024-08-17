@@ -239,7 +239,7 @@
             </div>
 
             <!-- journey fare -->
-            <div class="text-center flex flex-col items-center">
+            <div class="text-center flex flex-col items-center mb-6 md:mb-0">
               <div>
                 <img src="images/fare.png" alt="">
               </div>
@@ -258,30 +258,46 @@
             <div>
               <!-- title -->
               <div>
-                <h1 class="font-semibold text-2xl">Select Your Seat</h1>
+                <h1 class="font-semibold text-2xl mb-4">Select Your Seat</h1>
               </div>
 
               <!-- horizontal line -->
-              <div class="border-t border-dashed border-2"></div>
+              <div class="border-t border-dashed border-2 mb-4"></div>
 
               <!-- sitting status -->
-              <div>
-                <div>
+              <div class="flex justify-between mb-4">
+                <div class="flex justify-between">
                   <img src="images/seat-gray.png" alt="">
                   <p>Available</p>
                 </div>
 
-                <div>
+                <div class="flex justify-between">
                   <img src="images/seat-green-filled.png" alt="">
                   <p>Selected</p>
                 </div>
               </div>
 
               <!-- horizontal line -->
-              <div class="border-t border-dashed border-2"></div>
+              <div class="border-t border-dashed border-2 mb-4"></div>
 
               <!-- sits -->
-              <div></div>
+              <div>
+                <!-- driver seat -->
+                <div class="flex justify-end mb-4">
+                  <button class="btn btn-lg btn-disabled px-10"><img src="images/steering-wheel.png" alt=""></button>
+                </div>
+
+                <!-- passenger seat -->
+                <div>
+
+                  <!-- first row -->
+                  <div>
+                    <p>A</p>
+                    <input type="checkbox" aria-label="A1" class="btn text-lg appearance-none checked:bg-green-500" id="A1"/
+                  </div>
+                  <div></div>
+                </div>
+              </div>
             </div>
 
             <!-- the divider -->
