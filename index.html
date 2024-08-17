@@ -49,7 +49,7 @@
                   <li><a>Search</a></li>
                 </ul>
               </div>
-              <a class="btn btn-ghost text-3xl font-extrabold">P-Ticket</a>
+              <a class="btn btn-ghost text-3xl font-extrabold" href="#">P-Ticket</a>
             </div>
             <div class="navbar-center hidden lg:flex">
               <ul class="menu menu-horizontal px-1">
@@ -172,7 +172,7 @@
       </section>
 
       <!-- ticket info and booking section -->
-      <section class="bg-[#F7F8F8] mt-40 border-t-2 border-[#1DD100] rounded-t-[120px]">
+      <section class="bg-[#F7F8F8] mt-40 border-t-2 border-[#1DD100] rounded-t-[70px] md:rounded-t-[120px]">
         <div class="lg:px-12">
 
           <!-- description -->
@@ -182,10 +182,10 @@
           </div>
 
           <!-- journey info -->
-          <div class="bg-white p-2 rounded-3xl flex flex-col md:flex-row items-center">
+          <div class="bg-white rounded-3xl flex flex-col md:flex-row items-center">
 
             <!-- info about journey -->
-            <div class="basis-2/3">
+            <div class="md:basis-2/3 p-8 md:p-2 lg:p-8 w-11/12 md:w-full">
               <div class="flex flex-col md:flex-row gap-6 items-center space justify-between mb-4">
                 <div class="flex gap-6 items-center">
                   <div><img src="images/bus-logo.png" alt=""></div>
@@ -218,15 +218,15 @@
                 </div>
                 <div class="border-2 border-dotted border-[#03071233]"></div>
 
-                <div class="flex justify-around mt-4">
+                <div class="flex flex-col md:flex-row gap-2 md:gap-0 md:justify-around mt-4">
                   <div>
-                    <button class="btn btn-lg no-animation">Boarding Point - Laxmipur</button>
+                    <button class="btn btn-lg no-animation btn-active">Boarding Point - Laxmipur</button>
                   </div>
                   <div>
-                    <button class="btn btn-lg no-animation">Dropping Point - Bogura</button>
+                    <button class="btn btn-lg no-animation btn-active">Dropping Point - Bogura</button>
                   </div>
                   <div>
-                    <button class="btn btn-lg no-animation">Est. Time - 11 Hour</button>
+                    <button class="btn btn-lg no-animation btn-active">Est. Time - 11 Hour</button>
                   </div>
 
                 </div>
@@ -234,7 +234,14 @@
             </div>
 
             <!-- the divider -->
-            <div>
+
+            <!-- for phone -->
+            <div class="flex w-full flex-col md:hidden">
+              <div class="divider divider-success border-dashed border-2 border-green-400"></div>
+            </div>
+
+            <!-- for pc and tabs -->
+            <div class="hidden md:block">
               <img src="images/info-devider.png" alt="">
             </div>
 
