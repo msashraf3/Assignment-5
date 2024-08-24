@@ -6,12 +6,12 @@
     <title>Welcome to P-Ticket</title>
     <!-- website icon -->
     <link rel="shortcut icon" href="images/bus-logo.png" type="image/x-icon">
-    <!-- css connection -->
-     <link rel="stylesheet" href="styles/styles.css">
     <!-- daisy UI connection -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- css connection -->
+     <link rel="stylesheet" href="styles/styles.css">
 
 </head>
 <body>
@@ -90,7 +90,7 @@
     <div class="">
       <h1 class="text-white font-extrabold text-4xl md:text-6xl mb-6">End-to-End Travel with <br><span class="text-[#1DD100] mt-6">P Paribahan</span></h1>
       <p class="mb-5">Yes, you can book tickets and track your bookings directly within the app. The integrated features offer a seamless experience for managing your travel plans.</p>
-      <a href="#" role="button" class="btn btn-success bg-[#1DD100] font-bold">Buy Tickets</a>
+      <a href="" role="button" class="btn btn-success bg-[#1DD100] font-bold">Buy Tickets</a>
     </div>
   </div>
 </div>
@@ -252,9 +252,10 @@
           </div>
 
           <!-- sit info -->
-          <div class="flex flex-col md:flex-row mt-6 p-6 bg-white rounded-t-3xl">
+          <div class="flex flex-col md:flex-row mt-6 p-6 bg-white rounded-t-3xl gap-10">
 
-            <!-- select the sit -->
+            <div class="md:w-[50%]">
+              <!-- select the sit -->
             <div>
               <!-- title -->
               <div>
@@ -284,16 +285,35 @@
               <div>
                 <!-- driver seat -->
                 <div class="flex justify-end mb-4">
-                  <button class="btn btn-lg btn-disabled px-10"><img src="images/steering-wheel.png" alt=""></button>
+                  <button class="btn btn-lg btn-disabled px-8"><img src="images/steering-wheel.png" alt=""></button>
                 </div>
 
                 <!-- passenger seat -->
                 <div>
 
                   <!-- first row -->
-                  <div>
-                    <p>A</p>
-                    <input type="checkbox" aria-label="A1" class="btn text-lg appearance-none btn-accent checked:after:bg-green-800" id="A1"/
+                  <div class="flex gap-10 md:gap-8 justify-between">
+                    <div class="flex items-center gap-4 md:gap-16">
+                      <div>
+                        <p class="text-lg font-semibold text-[#03071250]">A</p>
+  
+                      </div>
+  
+                      <div class="flex gap-4 md:gap-16">
+                        <button id="A1" class="btn px-4 md:px-8 text-lg font-semibold text-[#03071250]">A1</button>
+                        <button id="A1" class="btn px-4 md:px-8 text-lg font-semibold text-[#03071250]">A1</button>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div class="flex gap-4 md:gap-16">
+                        <button id="A1" class="btn px-4 md:px-8 text-lg font-semibold text-[#03071250]">A1</button>
+                        <button id="A1" class="btn px-4 md:px-8 text-lg font-semibold text-[#03071250]">A1</button>
+                      </div>
+                    </div>
+                    </div>
+                    
+
                   </div>
                   <div></div>
                 </div>
@@ -301,14 +321,15 @@
             </div>
 
             <!-- the divider -->
-            <div>
-
-            </div>
+            <div class="border-s-2 border-dashed border-[#0307124D] p-10"></div>
 
             <!-- payment and coupon -->
             <div>
 
             </div>
+            </div>
+
+            
           </div>
 
         </div>
