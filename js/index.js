@@ -11,3 +11,7 @@ document.getElementById('A1').addEventListener('click', function (){
     
     // console.log('hello')
 })
+
+function buttonColor(){
+    addingAndRemovingClass();
+}
