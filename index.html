@@ -69,7 +69,7 @@
   </header>
 
 
-  <main>
+  <main id="main-section" class="">
 
     <!-- banner section -->
     <section class="lg:px-12 mt-6">
@@ -300,22 +300,85 @@
 
 
           <!-- the divider -->
-          <div class="hidden lg:block border-s-2 lg:rotate-0 border-dashed border-[#0307124D] p-10"></div>
-          <div class="block lg:hidden border-t-2 border-dashed border-[#0307124D] p-10"></div>
+          <div class="hidden lg:block border-s-2 lg:rotate-0 border-dashed border-[#0307124D]"></div>
+          <div class="block lg:hidden border-t-2 border-dashed border-[#0307124D]"></div>
 
           <!-- payment and coupon -->
-          <div>
+          <div class="lg:w-[50%]">
 
             <!-- select seat -->
-            <div></div>
+            <div>
+              <h1 class="font-semibold text-2xl mb-4">Select Your Seat</h1>
+
+              <div class="border-t border-dashed border-2 mb-4"></div>
+            </div>
 
 
             <!-- price and coupon -->
-            <div></div>
+            <div class="bg-[#F7F8F8] p-8 rounded-3xl">
+
+              <div class="flex justify-between items-center">
+                <div class="indicator">
+                  <span id="selected-seats" class="indicator-item indicator-middle badge bg-[#1DD100] text-white">0</span>
+                  <button id="selected-seats" class="btn glass font-bold no-animation ">Seat</button>
+                </div>
+                <h1 class="font-bold">Class</h1>
+                <h1 class="font-bold">Price</h1>
+              </div>
+              <div class="border-t border-dashed border-2 m-4"></div>
+
+              <!-- append the tickets -->
+              <div class="flex justify-between text-[#03071299] text-lg">
+                <div>C2</div>
+                <div>Economy</div>
+                <div>550</div>
+              </div>
+
+              <div class="border-t border-2 m-4"></div>
+
+              <!-- total price -->
+              <div class="flex justify-between mb-4">
+                <h1 class="font-bold">Total Price</h1>
+                <h1 class="font-bold">BDT <span>550</span></h1>
+              </div>
+
+              <!-- coupon box -->
+              <div class="mb-4">
+                <label class="input input-bordered flex items-center md:gap-2 md:px-6 md:py-8">
+                  <input type="text" class="grow text-[#03071266]" placeholder="Have any coupon?" />
+                  <button id="coupon-button" class="btn btn-sm md:btn-md bg-[#1DD100] text-white btn-disabled">Apply</button>
+                </label>
+              </div>
+
+              <!-- grand total -->
+              <div class="flex justify-between">
+                <h1 class="font-bold">Grand Total</h1>
+                <h1 class="font-bold">BDT <span></span></h1>
+              </div>
+
+            </div>
 
 
             <!-- passenger info -->
-            <div></div>
+            <div class="mt-4">
+              <div>
+                <h1 class="font-bold text-lg mb-4">Passenger Name*</h1>
+                <input id="passenger-name" type="text" placeholder="Enter Your Name" class="input input-bordered w-full px-6 py-8" />
+                
+                <h1 class="font-bold text-lg mb-4 mt-4">Phone Number*</h1>
+                <input id="phone-number" type="number" placeholder="Enter Your Phone Number" class="input input-bordered w-full px-6 py-8" />
+
+                <h1 class="font-bold text-lg mb-4 mt-4">Email ID</h1>
+                <input type="email" placeholder="Enter Your Email" class="input input-bordered w-full px-6 py-8" />
+
+                <button onclick="conformation(event)" id="order" class="btn btn-disabled bg-[#1DD100] text-white mt-4 w-full font-extrabold">Next</button>
+
+              </div>
+              <div class="flex justify-around mt-4">
+                <a class="link text-[#03071299] text-lg">Terms and Conditions</a>
+                <a class="link text-[#03071299] text-lg">Cancellation Policy</a>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -326,6 +389,22 @@
 
       </div>
     </section>
+  </main>
+
+  <main id="conformation" class="hidden bg-[#F7F8F8] mt-6">
+    <div class="w-full h-full">
+      <div class="bg-white flex flex-col justify-center items-center rounded-xl text-center">
+        <img src="images/success.png" alt="">
+        <h1 class="font-extrabold text-xl text-[#27AE60] my-4">Success</h1>
+        <p class="font-bold text-lg mb-1 text-[#4A4A4A]">Thank you for Booking Our Bus Seats.</p>
+        <p class="font-bold text-lg mb-2 text-[#4A4A4A]">We are working hard to find the best service and deals for you.</p>
+        <p class="font-light text-lg mb-2 text-[#4A4A4A]">Shortly you will find a confirmation in your email.</p>
+
+        <a onclick="reset(event)" href="index.html
+        " id="reset" role="button" class="btn btn-wide mb-6 bg-[#27AE60] text-white">Continue</a>
+        
+      </div>
+    </div>
   </main>
 
   <!-- footer -->

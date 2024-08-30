@@ -1,21 +1,10 @@
-// document.getElementById('A1').addEventListener('click', function (){
-//     if (this.classList.contains('green-color')) {
-//         const gettingText = document.getElementById('A1');
-//     gettingText.classList.remove('green-color');
-//     gettingText.classList.add('text-[#03071250]');
-//     } else {
-//         const gettingText = document.getElementById('A1');
-//     gettingText.classList.add('green-color');
-//     gettingText.classList.remove('text-[#03071250]');
-//     }
-    
-//     // console.log('hello')
-// })
+let selectedSeats = 0; // selectedSeats globally
 
-let selectedSeats = 0; // Declare selectedSeats globally
+const seatCount = document.getElementById('selected-seats');
+const couponButton = document.getElementById('coupon-button');
 
 function buttonColor(event) {
-    const button = event.target; // Use event.target to get the clicked button
+    const button = event.target; // Used event.target to get the clicked button
     const maximumCanSelect = 4;
 
     // Toggle the color
@@ -24,7 +13,7 @@ function buttonColor(event) {
         button.classList.add('text-[#03071250]');
         selectedSeats--;
     } else {
-        if (selectedSeats < maximumCanSelect) { // Use < instead of <=
+        if (selectedSeats < maximumCanSelect) {
             button.classList.add('green-color');
             button.classList.remove('text-[#03071250]');
             selectedSeats++;
@@ -32,4 +21,49 @@ function buttonColor(event) {
             alert('Maximum 4 seats can be selected.');
         }
     }
+
+    //updating the seatCount
+    seatCount.innerText = selectedSeats;
+
+    //changing the coupon button
+    if (selectedSeats === 4) {
+        couponButton.classList.remove('btn-disabled');
+    } else {
+        couponButton.classList.add('btn-disabled');
+    }
+
+}
+
+// order button 
+const passengerName = document.getElementById('passenger-name');
+const phoneNumber = document.getElementById('phone-number');
+const order = document.getElementById('order');
+
+function updateButtonState() {
+    const gettingNameValue = passengerName.value.trim();
+    const gettingNumberValue = phoneNumber.value.trim();
+
+    // Check if both fields are filled
+    if (gettingNameValue && gettingNumberValue) {
+        order.classList.remove('btn-disabled');
+    } else {
+        order.classList.add('btn-disabled');
+    }
+}
+
+// Add event listeners 
+passengerName.addEventListener('keyup', updateButtonState);
+phoneNumber.addEventListener('keyup', updateButtonState);
+
+
+
+//conformation for the seats
+function conformation(event){
+    const button = event.target;
+    const secondSection = document.getElementById('conformation');
+    const mainSection = document.getElementById('main-section');
+
+    secondSection.classList.remove('hidden');
+    mainSection.classList.add('hidden');
+
 }
