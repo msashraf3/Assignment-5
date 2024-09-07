@@ -31,8 +31,87 @@ function buttonColor(event) {
     } else {
         couponButton.classList.add('btn-disabled');
     }
+}
+
+
+//adding seats to the selection div
+
+const seatBtn = document.getElementsByClassName('all-seats');
+
+for (const seat of seatBtn) {
+
+    seat.addEventListener('click', function (event) {
+        const element = event.target.innerText;
+
+        const selectedSeatsDiv = document.getElementById('append-ticket');
+
+        const div = document.createElement('div');
+        div.classList.add('flex', 'justify-between', 'mb-4');
+
+        const p1 = document.createElement('p');
+        const p2 = document.createElement('p');
+        const p3 = document.createElement('p');
+        p3.classList.add('price');
+
+        p1.innerText = element;
+        p2.innerText = 'Economy';
+        p3.innerText = 550;
+
+        div.appendChild(p1);
+        div.appendChild(p2);
+        div.appendChild(p3);
+
+        selectedSeatsDiv.appendChild(div);
+
+        updateTotal(p3.innerText);
+        updateGrandTotal()
+    })
+}
+
+
+
+//total 
+
+function updateTotal(value) {
+
+    console.log(value);
+    const totalPrice = document.getElementById('total-price');
+    const totalPriceText = totalPrice.innerText;
+    const totalPriceParse = parseInt(totalPriceText);
+    const finalPrice = totalPriceParse + parseInt(value);
+
+    totalPrice.innerText = finalPrice;
+}
+
+
+// grand total
+
+function updateGrandTotal(status) {
+
+    if (status) {
+        const couponCode = document.getElementById('coupon-code').value;
+        if (couponCode === 'NEW15') {
+            const grandTotal = document.getElementById('grand-total').innerText;
+            const grandTotalParse = parseInt(grandTotal);
+            const sumCoupon = grandTotalParse * 0.15;
+            const finalGrandTotal = grandTotalParse - sumCoupon
+            document.getElementById('grand-total').innerText = finalGrandTotal;
+        } else if (couponCode === 'Couple 20') {
+            const grandTotal = document.getElementById('grand-total').innerText;
+            const grandTotalParse = parseInt(grandTotal);
+            const sumCoupon = grandTotalParse * 0.20;
+            const finalGrandTotal = grandTotalParse - sumCoupon
+            document.getElementById('grand-total').innerText = finalGrandTotal;
+        }
+    } else {
+        const totalPrice = document.getElementById('total-price').innerText;
+        const totalPriceParse = parseInt(totalPrice);
+
+        document.getElementById('grand-total').innerText = totalPriceParse;
+    }
 
 }
+
 
 // order button 
 const passengerName = document.getElementById('passenger-name');
@@ -58,7 +137,7 @@ phoneNumber.addEventListener('keyup', updateButtonState);
 
 
 //conformation for the seats
-function conformation(event){
+function conformation(event) {
     const button = event.target;
     const secondSection = document.getElementById('conformation');
     const mainSection = document.getElementById('main-section');

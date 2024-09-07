@@ -328,10 +328,8 @@
               <div class="border-t border-dashed border-2 m-4"></div>
 
               <!-- append the tickets -->
-              <div class="flex justify-between text-[#03071299] text-lg">
-                <div>C2</div>
-                <div>Economy</div>
-                <div>550</div>
+              <div id="append-ticket" class="text-[#03071299] text-lg">
+                
               </div>
 
               <div class="border-t border-2 m-4"></div>
@@ -339,21 +337,21 @@
               <!-- total price -->
               <div class="flex justify-between mb-4">
                 <h1 class="font-bold">Total Price</h1>
-                <h1 class="font-bold">BDT <span>550</span></h1>
+                <h1 class="font-bold">BDT <span id="total-price">0</span></h1>
               </div>
 
               <!-- coupon box -->
               <div class="mb-4">
                 <label class="input input-bordered flex items-center md:gap-2 md:px-6 md:py-8">
-                  <input type="text" class="grow text-[#03071266]" placeholder="Have any coupon?" />
-                  <button id="coupon-button" class="btn btn-sm md:btn-md bg-[#1DD100] text-white btn-disabled">Apply</button>
+                  <input id="coupon-code" type="text" class="grow text-[#03071266]" placeholder="Have any coupon?" />
+                  <button onclick="updateGrandTotal('coupon')" id="coupon-button" class="btn btn-sm md:btn-md bg-[#1DD100] text-white btn-disabled">Apply</button>
                 </label>
               </div>
 
               <!-- grand total -->
               <div class="flex justify-between">
                 <h1 class="font-bold">Grand Total</h1>
-                <h1 class="font-bold">BDT <span></span></h1>
+                <h1 class="font-bold">BDT <span id="grand-total">0</span></h1>
               </div>
 
             </div>
