@@ -96,12 +96,14 @@ function updateGrandTotal(status) {
             const sumCoupon = grandTotalParse * 0.15;
             const finalGrandTotal = grandTotalParse - sumCoupon
             document.getElementById('grand-total').innerText = finalGrandTotal;
+            document.getElementById('coupon-button').classList.add('btn-disabled');
         } else if (couponCode === 'Couple 20') {
             const grandTotal = document.getElementById('grand-total').innerText;
             const grandTotalParse = parseInt(grandTotal);
             const sumCoupon = grandTotalParse * 0.20;
             const finalGrandTotal = grandTotalParse - sumCoupon
             document.getElementById('grand-total').innerText = finalGrandTotal;
+            document.getElementById('coupon-button').classList.add('btn-disabled');
         }
     } else {
         const totalPrice = document.getElementById('total-price').innerText;
