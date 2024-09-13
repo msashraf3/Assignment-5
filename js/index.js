@@ -138,6 +138,24 @@ function updateGrandTotal(status) {
             const finalGrandTotal = grandTotalParse - sumCoupon
             document.getElementById('grand-total').innerText = finalGrandTotal;
             document.getElementById('coupon-button').classList.add('btn-disabled');
+
+            // adding the discount div
+            const discountedPrice = document.getElementById('discounted-price');
+            discountedPrice.classList.remove('hidden');
+            const h1 = document.createElement('h1');
+            h1.classList.add('font-bold');
+            h1.innerText = 'Discounted Price';
+            
+
+            const p4 = document.createElement('p');
+            p4.classList.add('font-bold');
+            p4.innerText = '-' + sumCoupon;
+
+            // appending both
+            discountedPrice.appendChild(h1);
+            discountedPrice.appendChild(p4);
+
+
         } else if (couponCode === 'Couple 20') {
             const grandTotal = document.getElementById('grand-total').innerText;
             const grandTotalParse = parseInt(grandTotal);
@@ -145,6 +163,22 @@ function updateGrandTotal(status) {
             const finalGrandTotal = grandTotalParse - sumCoupon
             document.getElementById('grand-total').innerText = finalGrandTotal;
             document.getElementById('coupon-button').classList.add('btn-disabled');
+
+            // adding the discount div
+            const discountedPrice = document.getElementById('discounted-price');
+            discountedPrice.classList.remove('hidden');
+            const h1 = document.createElement('h1');
+            h1.classList.add('font-bold');
+            h1.innerText = 'Discounted Price';
+            
+
+            const p4 = document.createElement('p');
+            p4.classList.add('font-bold');
+            p4.innerText = '-' + sumCoupon;
+
+            // appending both
+            discountedPrice.appendChild(h1);
+            discountedPrice.appendChild(p4);
         }
     } else {
         const totalPrice = document.getElementById('total-price').innerText;
