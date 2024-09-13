@@ -36,37 +36,70 @@ function buttonColor(event) {
 
 //adding seats to the selection div
 
+let selectedSeats2 = 0;
+const MAX_SEATS = 4;
+const selectedSeats3 = {}; // Object to keep track of selected seats
+
 const seatBtn = document.getElementsByClassName('all-seats');
 
 for (const seat of seatBtn) {
-
     seat.addEventListener('click', function (event) {
-        const element = event.target.innerText;
-
+        const seatNumber = event.target.innerText;
         const selectedSeatsDiv = document.getElementById('append-ticket');
 
-        const div = document.createElement('div');
-        div.classList.add('flex', 'justify-between', 'mb-4');
+        if (selectedSeats3[seatNumber]) {
+            // Seat is already selected, so remove it
+            const seatDiv = selectedSeats3[seatNumber];
+            selectedSeatsDiv.removeChild(seatDiv);
 
-        const p1 = document.createElement('p');
-        const p2 = document.createElement('p');
-        const p3 = document.createElement('p');
-        p3.classList.add('price');
+            // Update selected seats count
+            selectedSeats2--;
 
-        p1.innerText = element;
-        p2.innerText = 'Economy';
-        p3.innerText = 550;
+            // Remove seat from selectedSeats3 object
+            delete selectedSeats3[seatNumber];
 
-        div.appendChild(p1);
-        div.appendChild(p2);
-        div.appendChild(p3);
+            updateTotal(-550);
+            updateGrandTotal();
+        } else {
+            if (selectedSeats2 >= MAX_SEATS) {
+                alert('You cannot select more than ' + MAX_SEATS + ' seats.');
+                return;
+            }
 
-        selectedSeatsDiv.appendChild(div);
+            // Seat is not selected, so add it
+            const div = document.createElement('div');
+            div.classList.add('flex', 'justify-between', 'mb-4');
 
-        updateTotal(p3.innerText);
-        updateGrandTotal()
-    })
+            const p1 = document.createElement('p');
+            const p2 = document.createElement('p');
+            const p3 = document.createElement('p');
+            p3.classList.add('price');
+
+            p1.innerText = seatNumber;
+            p2.innerText = 'Economy';
+            p3.innerText = 550;
+
+            div.appendChild(p1);
+            div.appendChild(p2);
+            div.appendChild(p3);
+
+            selectedSeatsDiv.appendChild(div);
+
+            // Add seat to selectedSeats3 object
+            selectedSeats3[seatNumber] = div;
+
+            // Update selected seats count
+            selectedSeats2++;
+
+            updateTotal(p3.innerText);
+            updateGrandTotal();
+        }
+    });
 }
+
+
+
+
 
 
 
@@ -74,7 +107,6 @@ for (const seat of seatBtn) {
 
 function updateTotal(value) {
 
-    console.log(value);
     const totalPrice = document.getElementById('total-price');
     const totalPriceText = totalPrice.innerText;
     const totalPriceParse = parseInt(totalPriceText);
