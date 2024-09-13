@@ -1,5 +1,7 @@
 let selectedSeats = 0; // selectedSeats globally
 
+let alertShow = false;
+
 const seatCount = document.getElementById('selected-seats');
 const couponButton = document.getElementById('coupon-button');
 
@@ -19,6 +21,7 @@ function buttonColor(event) {
             selectedSeats++;
         } else {
             alert('Maximum 4 seats can be selected.');
+            alertShow = true;
         }
     }
 
@@ -60,9 +63,15 @@ for (const seat of seatBtn) {
 
             updateTotal(-550);
             updateGrandTotal();
+
+            //reseting the alert
+            alertShow = false;
         } else {
             if (selectedSeats2 >= MAX_SEATS) {
-                alert('You cannot select more than ' + MAX_SEATS + ' seats.');
+                if (condition) {
+                    alert('You cannot select more than ' + MAX_SEATS + ' seats.');
+                    alertShow = true;
+                }
                 return;
             }
 
