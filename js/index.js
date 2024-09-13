@@ -155,6 +155,10 @@ function updateGrandTotal(status) {
             discountedPrice.appendChild(h1);
             discountedPrice.appendChild(p4);
 
+            // input value to empty
+            const couponCodeText = document.getElementById('coupon-code');
+            couponCodeText.value = '';
+
 
         } else if (couponCode === 'Couple 20') {
             const grandTotal = document.getElementById('grand-total').innerText;
@@ -179,6 +183,10 @@ function updateGrandTotal(status) {
             // appending both
             discountedPrice.appendChild(h1);
             discountedPrice.appendChild(p4);
+
+            // input value to empty
+            const couponCodeText = document.getElementById('coupon-code');
+            couponCodeText.value = '';
         }
     } else {
         const totalPrice = document.getElementById('total-price').innerText;
