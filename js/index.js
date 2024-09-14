@@ -166,7 +166,7 @@ function updateGrandTotal(status) {
 
             // hiding the full coupon div
             const couponDiv = document.getElementById('coupon-div').classList.add('hidden');
-            
+
 
             // adding the discount div
             const discountedPrice = document.getElementById('discounted-price');
@@ -199,7 +199,7 @@ function updateGrandTotal(status) {
 
             // hiding the full coupon div
             const couponDiv = document.getElementById('coupon-div').classList.add('hidden');
-            
+
 
             // adding the discount div
             const discountedPrice = document.getElementById('discounted-price');
@@ -220,6 +220,9 @@ function updateGrandTotal(status) {
             // input value to empty
             const couponCodeText = document.getElementById('coupon-code');
             couponCodeText.value = '';
+        }
+        else {
+            alert('Please Enter A Valid Coupon Code.');
         }
     } else {
         const totalPrice = document.getElementById('total-price').innerText;
