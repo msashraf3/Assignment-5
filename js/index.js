@@ -3,6 +3,7 @@ let selectedSeats = 0; // selectedSeats globally
 let alertShow = false;
 
 const seatCount = document.getElementById('selected-seats');
+
 const couponButton = document.getElementById('coupon-button');
 
 function buttonColor(event) {
@@ -19,14 +20,28 @@ function buttonColor(event) {
             button.classList.add('green-color');
             button.classList.remove('text-[#03071250]');
             selectedSeats++;
+
+            //updating the seatCount
+            seatCount.innerText = selectedSeats;
+
+
+
+            //updating the seat left
+            const seatsLeft = document.getElementById('seats-left');
+            const seatsLeftCount = document.getElementById('seats-left').innerText;
+            const seatLeftCountParse = parseInt(seatsLeftCount);
+            const seatLeftAfter = seatLeftCountParse - 1;
+            seatsLeft.innerText = seatLeftAfter;
+
         } else {
             alert('Maximum 4 seats can be selected.');
             alertShow = true;
         }
     }
 
-    //updating the seatCount
-    seatCount.innerText = selectedSeats;
+
+
+
 
     //changing the coupon button
     if (selectedSeats === 4) {
@@ -137,7 +152,10 @@ function updateGrandTotal(status) {
             const sumCoupon = grandTotalParse * 0.15;
             const finalGrandTotal = grandTotalParse - sumCoupon
             document.getElementById('grand-total').innerText = finalGrandTotal;
-            document.getElementById('coupon-button').classList.add('btn-disabled');
+
+            // hiding the full coupon div
+            const couponDiv = document.getElementById('coupon-div').classList.add('hidden');
+            
 
             // adding the discount div
             const discountedPrice = document.getElementById('discounted-price');
@@ -145,7 +163,7 @@ function updateGrandTotal(status) {
             const h1 = document.createElement('h1');
             h1.classList.add('font-bold');
             h1.innerText = 'Discounted Price';
-            
+
 
             const p4 = document.createElement('p');
             p4.classList.add('font-bold');
@@ -168,13 +186,18 @@ function updateGrandTotal(status) {
             document.getElementById('grand-total').innerText = finalGrandTotal;
             document.getElementById('coupon-button').classList.add('btn-disabled');
 
+
+            // hiding the full coupon div
+            const couponDiv = document.getElementById('coupon-div').classList.add('hidden');
+            
+
             // adding the discount div
             const discountedPrice = document.getElementById('discounted-price');
             discountedPrice.classList.remove('hidden');
             const h1 = document.createElement('h1');
             h1.classList.add('font-bold');
             h1.innerText = 'Discounted Price';
-            
+
 
             const p4 = document.createElement('p');
             p4.classList.add('font-bold');
@@ -203,12 +226,14 @@ const passengerName = document.getElementById('passenger-name');
 const phoneNumber = document.getElementById('phone-number');
 const order = document.getElementById('order');
 
+
 function updateButtonState() {
     const gettingNameValue = passengerName.value.trim();
     const gettingNumberValue = phoneNumber.value.trim();
-
+    const seatCountText = seatCount.innerText;
+    const seatCountTextParse = parseInt(seatCountText);
     // Check if both fields are filled
-    if (gettingNameValue && gettingNumberValue) {
+    if (gettingNameValue && gettingNumberValue && seatCountTextParse > 0) {
         order.classList.remove('btn-disabled');
     } else {
         order.classList.add('btn-disabled');
