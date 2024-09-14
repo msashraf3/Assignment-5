@@ -15,6 +15,17 @@ function buttonColor(event) {
         button.classList.remove('green-color');
         button.classList.add('text-[#03071250]');
         selectedSeats--;
+
+        //updating the seatCount
+        seatCount.innerText = selectedSeats;
+
+        //updating the seat left
+        const seatsLeft = document.getElementById('seats-left');
+        const seatsLeftCount = document.getElementById('seats-left').innerText;
+        const seatLeftCountParse = parseInt(seatsLeftCount);
+        const seatLeftAfter = seatLeftCountParse + 1;
+        seatsLeft.innerText = seatLeftAfter;
+
     } else {
         if (selectedSeats < maximumCanSelect) {
             button.classList.add('green-color');
@@ -147,10 +158,10 @@ function updateGrandTotal(status) {
     if (status) {
         const couponCode = document.getElementById('coupon-code').value;
         if (couponCode === 'NEW15') {
-            const grandTotal = document.getElementById('grand-total').innerText;
-            const grandTotalParse = parseInt(grandTotal);
-            const sumCoupon = grandTotalParse * 0.15;
-            const finalGrandTotal = grandTotalParse - sumCoupon
+            const total = document.getElementById('total-price').innerText;
+            const totalParse = parseInt(total);
+            const sumCoupon = totalParse * 0.15;
+            const finalGrandTotal = totalParse - sumCoupon;
             document.getElementById('grand-total').innerText = finalGrandTotal;
 
             // hiding the full coupon div
@@ -179,12 +190,11 @@ function updateGrandTotal(status) {
 
 
         } else if (couponCode === 'Couple 20') {
-            const grandTotal = document.getElementById('grand-total').innerText;
-            const grandTotalParse = parseInt(grandTotal);
-            const sumCoupon = grandTotalParse * 0.20;
-            const finalGrandTotal = grandTotalParse - sumCoupon
+            const total = document.getElementById('total-price').innerText;
+            const totalParse = parseInt(total);
+            const sumCoupon = totalParse * 0.20;
+            const finalGrandTotal = totalParse - sumCoupon;
             document.getElementById('grand-total').innerText = finalGrandTotal;
-            document.getElementById('coupon-button').classList.add('btn-disabled');
 
 
             // hiding the full coupon div
